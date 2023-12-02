@@ -1,0 +1,71 @@
+<!--outlet -->
+<div class="main-content">
+  <div class="section-content section.content-p-30">
+    <div class="container-fluid">
+      <div class="row">
+        <!--LOOP OVER THE COLLECTION OF PRODUCTS-->
+        <div *ngFor="let tempProduct of products" class="col-md-3">
+          <div class="product-box">
+            <!--Devuelve ID del producto-->
+            <a routerLink="/products/{{ tempProduct.id_product }}">
+
+            <!--Devuelve IMG del producto-->
+              <img src="{{ tempProduct.image_url }}" class="img-thumbnail" />
+            </a>
+
+            <!-- <a routerLink="/products/{{ tempProduct.id_product }}">
+            </a> -->
+
+            <!--Devuelve el nombre del producto-->
+            <h1>{{ tempProduct.name }}</h1>
+
+            <!--Devuelve el precio del producto-->
+            <div class="price">
+              {{ tempProduct.unit_price | currency : "USD" }}
+            </div>
+            <!--Devuelve Boton Compra-->
+            <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-info-local">Añadir al carrito xd</button>
+          </div>
+        </div>
+        <div *ngIf="products.length <= 0" class="alert alert-warning col-md-12" role="alert">
+          Producto no encontrado :p
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="footer-pagination">
+        <div class="row">
+          <div class="col-md-6"></div>
+
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-9" style="padding-left: 30%">
+
+                <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize" [collectionSize]="theTotalElements"
+                  [maxSize]="5" [boundaryLinks]="true" (pageChange)="listProducts()">
+                </ngb-pagination>
+
+              </div>
+
+              <!--DropDownList de productos por pagina-->
+              <div class="col-md-3 mt-2" style="text-align: right;">
+                <span class="mr-2">Items por Pagina</span>
+
+
+                <select #myPageSelect (change)="updatePageSize(myPageSelect.value)">
+                  <option>2</option>
+                  <option selected="true">5</option>
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <!--DropDownList de productos por pagina-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Footer-->
+    </div>
+  </div>
+</div>

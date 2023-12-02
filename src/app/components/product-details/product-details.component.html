@@ -1,0 +1,62 @@
+<br><br><br><br>
+<div class="detail-section mt-4">
+  <div class="container-fluid">
+    <div class="row">     
+      <div class="col-md-6 d-flex align-items-center">
+        <img src="{{product.image_url}}" class="detail-img img-fluid" style="max-width: 100%">
+      </div>
+      <div class="col-md-6">
+        <h3 class="detail-title">{{product.name}}</h3>
+        <div class="price detail-title">{{product.unit_price | currency:'PEN '}}</div>        
+        <!--<button (click)="addToCart()" class="btn btn-primary">Añadir al carrito</button>-->
+        <button (click)="addToCart()" class="btn btn-primary" [disabled]="product.units_in_stock <= 0">
+          Añadir al carrito
+        </button>
+        <!--@TODO, bug icono en product-list.component corregir-->
+        <hr>
+        <h4 class="detail-title">Descripción: </h4>
+        <p class="detail-title">{{product.description}}</p>
+
+        <h4 class="detail-title">Stock</h4>
+        <p class="detail-title">{{product.units_in_stock}} unidades</p>
+
+        <a routerLink="/products" class="btn btn-secondary mt-3">Regresar</a>
+      </div>
+
+      <!--  
+        <div class="col-md-6">
+        -- Reseñas o comentarios 
+        <h4 class="detail-title">Reseñas</h4>
+        <div class="review-section">
+          <div class="review">
+            <h5 style="color: #333; font-size: 18px; font-weight: bold;">Usuario 1</h5>
+            <p style="color: #666;">¡Excelente producto! Estoy muy satisfecho con mi compra.</p>
+          </div>
+          <div class="review">
+            <h5 style="color: #333; font-size: 18px; font-weight: bold;">Usuario 2</h5>
+            <p style="color: #666;">El producto cumplió con mis expectativas. Lo recomendaría a otros compradores.</p>
+          </div>
+          Puedes agregar más reseñas aquí 
+        </div>
+      </div>
+    -->
+      
+    </div>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>

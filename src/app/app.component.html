@@ -1,0 +1,54 @@
+<!-- Pagina de los productos(default) -->
+<div class="page-wrapper">
+
+  <!-- MENU SIDEBAR(IZQUIERDA) -->
+  <aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+      <a routerLink="/products"> <!-- Redirecciona a products ../assets/images/logo.png -->
+        <img src="../assets/images/portalgamer.png" alt="PORTAL GAMING" class="img-responsive">
+      </a>
+    </div>
+    <!-- Nuevo menu = Lista las categorias (consolas-juegos-accesorios) -->
+    <app-product-category-menu></app-product-category-menu>
+  </aside>
+  <!-- END MENU SIDEBAR-->
+
+  <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+      <div class="section-content section-content-p30">
+        <div class="container-fluid">
+          <div class="header-wrap">          
+            <app-search></app-search>  <!-- Barra de Busqueda -->         
+            <app-login-status></app-login-status> <!-- Barra de inicio de sesion-->           
+            <app-cart-status></app-cart-status> <!-- Carro de compras -->      
+          </div>
+          <div class="account-wrap"></div>
+        </div>
+      </div>
+    </header>
+    <!-- END HEADER DESKTOP-->
+    <!-- MAIN CONTENT -->
+    <!-- Definir la ruta del outlet -->
+    <router-outlet></router-outlet> <!-- Muestra los productos -->
+    <!-- <app-product-list></app-product-list>  -->
+  </div>
+</div>
+<!-- END PAGE CONTAINER -->
+
+<footer>
+  <ul>
+    <li><a href="#">Acerca de Nosotros</a></li>
+    <li><a href="#">Contactanos</a></li>
+    <li><a href="#">Ayuda</a></li>
+  </ul>
+  <div class="copyright">
+    &copy; PORTAL GAMER 2023 LIMA PERU
+  </div>
+</footer>
+
+<!-- <iframe height="430" width="350" src="https://bot.dialogflow.com/ff6a7cc0-7bf0-4a97-a4df-882b31de74b6"></iframe> -->
+
+
+
+

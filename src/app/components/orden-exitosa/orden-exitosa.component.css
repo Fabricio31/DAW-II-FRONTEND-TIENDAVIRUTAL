@@ -1,0 +1,58 @@
+.main-content{
+    margin-right: 115px;
+    margin-left: 115px;
+}
+
+.titulo-compra{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+
+.main-content {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .titulo-compra {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .welcome-message {
+    margin-bottom: 20px;
+  }
+  
+  .welcome-message p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+  }
+  
+  .text-center {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .text-center strong {
+    color: #444;
+  }
+  
+  .text-center img {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  
+  .text-center button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .text-center button:hover {
+    background-color: #2980b9;
+  }
+  

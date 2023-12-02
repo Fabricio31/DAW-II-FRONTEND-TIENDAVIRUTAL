@@ -1,0 +1,27 @@
+<div class="menu-sidebar-content js-scrollbar1">
+    <nav class="navbar-sidebar">  
+      <ul class="list-unstyled navbar-list">
+
+        <li><a href=""><i class="fa-solid fa-house"></i>Inicio</a></li>
+        
+        <br>
+        <li><a href="#"><i class="fa-solid fa-shop"></i>Productos</a></li>
+        <!-- <li>
+          <a routerLink="/category/1" routerLinkActive="active-link"> Consolas</a>
+        </li> -->
+        <li *ngFor="let tempProductCategory of productCategories">
+          <a routerLink="/category/{{ tempProductCategory.id}}" routerLinkActive="active-link">
+            <i class="fa-sharp fa-solid fa-arrow-up fa-rotate-90" style="color: #00fbff;"></i> {{ tempProductCategory.category_name}}</a>
+        </li>
+        <br>
+        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i>Preguntas Frecuentes</a></li>
+       
+
+        <!-- <li>
+          <a routerLink="/category/3" routerLinkActive="active-link"> Accesorios</a>
+        </li> -->
+      </ul>
+    </nav>
+  </div>
+
+ 

@@ -1,0 +1,85 @@
+<!--<p *ngFor="let tempProduct of products">
+    {{tempProduct.name}}: {{tempProduct.unit_price | currency:'USD'}}
+</p> -->
+
+<!--@TODO: ME QUEDE BUSCANDO OPCIONES DE GRID PARA LOS PRODUCTOS, MEJORAR ASIDE Y MENU BAR -->
+
+<section class="section-products">
+    <div class="container">
+        <div class="row">
+            <!-- Single Product -->
+            <div *ngFor="let tempProduct of products" class="col-md-6 col-lg-4 col-xl-3">
+                <div id="product-1" class="single-product">
+                    <div class="part-1">
+                        <a routerLink="/products/{{ tempProduct.id_product }}">
+                          <img src="{{ tempProduct.image_url }}" style="height: 350px;"/>
+                        </a>
+                        
+                        
+                        <ul>
+                            <li (click)="addToCart(tempProduct)"><a href="/"><i class="fas fa-shopping-cart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                            <li><a routerLink="/products/{{ tempProduct.id_product }}"><i class="fas fa-plus"></i></a></li>
+                            <li><a href="#"><i class="fas fa-expand"></i></a></li>                            
+                        </ul>
+                    </div>
+                    <div class="part-2">
+                       
+                        <h3 class="product-title">{{ tempProduct.name }}</h3>
+                        <h4 class="product-old-price">{{ tempProduct.unit_price | currency : " S/" }}</h4>
+                        <h4 class="product-price">S/49.99</h4>
+                        <br>
+                        <button (click)="addToCart(tempProduct)" 
+                         class="btn btn-primary btn-info-local">
+                         <i class="fas fa-shopping-cart"></i>
+                         Añadir al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="products.length <= 0" class="alert alert-warning col-md-12" role="alert">
+                Producto no encontrado :p
+              </div>
+        </div>
+
+
+              <!--Footer-->
+      <div class="footer-pagination">
+        <div class="row">
+          <div class="col-md-6"></div>
+
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-9" style="padding-left: 30%">
+
+                <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize" [collectionSize]="theTotalElements"
+                  [maxSize]="5" [boundaryLinks]="true" (pageChange)="listProducts()">
+                </ngb-pagination>
+
+              </div>
+
+              <!--DropDownList de productos por pagina-->
+              <div class="col-md-3 mt-2" style="text-align: right;">
+                <span class="mr-2">Items por Pagina</span>
+
+
+                <select #myPageSelect (change)="updatePageSize(myPageSelect.value)">
+                  <option>2</option>
+                  <option>5</option>
+                  <option selected="true">10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <!--DropDownList de productos por pagina-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+</section>
